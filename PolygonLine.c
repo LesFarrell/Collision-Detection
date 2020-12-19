@@ -48,6 +48,16 @@ bool polyLine(Vector2 vertices[], int NumVertices, float x1, float y1, float x2,
     return false;
 }
 
+
+int DrawPolyExLines(Vector2 vertices[],int  numvertices,Color color)
+{
+    for (int i=0;i<numvertices-1;i++)
+    {
+        DrawLineV(vertices[i],vertices[i+1],color);
+    }
+}
+
+
 int main(void)
 {
     // Update line to mouse coordinates.

@@ -105,12 +105,21 @@ bool polygonPoint(Vector2 vertices[], int NumVertices, float px, float py)
     return collision;
 }
 
+
+int DrawPolyExLines(Vector2 vertices[],int  numvertices,Color color)
+{
+    for (int i=0;i<numvertices-1;i++)
+    {
+        DrawLineV(vertices[i],vertices[i+1],color);
+    }
+}
+
 int main(void)
 {
     float sx = 0; // A square, controlled by the mouse.
     float sy = 0;
-    float sw = 300; // width and height.
-    float sh = 300;
+    float sw = 100; // width and height.
+    float sh = 100;
 
     // Array of Vector2, one for each vertex in the polygon.
     Vector2 vertices[10];

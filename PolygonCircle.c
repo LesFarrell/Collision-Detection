@@ -155,6 +155,16 @@ bool polyCircle(Vector2 vertices[], int NumVertices, float cx, float cy, float r
     return false;
 }
 
+
+int DrawPolyExLines(Vector2 vertices[],int  numvertices,Color color)
+{
+    for (int i=0;i<numvertices-1;i++)
+    {
+        DrawLineV(vertices[i],vertices[i+1],color);
+    }
+}
+
+
 int main(void)
 {
     float cx = 0; // Position of the circle
@@ -197,7 +207,7 @@ int main(void)
             DrawCircle(cx, cy, r, SKYBLUE);
         }
 
-        DrawPolyExLines(vertices, 5, SKYBLUE);
+        DrawPolyExLines(vertices, 5, BLUE);
 
         EndDrawing();
     }
